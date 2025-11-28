@@ -34,7 +34,6 @@ class App(ctk.CTk):
         self.inventory = []
 
     def add_product(self):
-        """Gombnyomásra felvesz egy új terméket."""
         name = self.name_entry.get().strip()
         qty_text = self.qty_entry.get().strip()
 
@@ -59,6 +58,6 @@ class App(ctk.CTk):
         self.qty_entry.delete(0, "end")
 
     def save_inventory(self):
-        """JSON fájlba menti az adatokat."""
+
         with open("data/inventory.json", "w", encoding="utf-8") as f:
             json.dump(self.inventory, f, indent=2, ensure_ascii=False)

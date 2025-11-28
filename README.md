@@ -2,11 +2,11 @@
 
 Modern Python alapú raktárkezelő alkalmazás grafikus felülettel.
 
-## 📋 Projekt áttekintés
+## Projekt áttekintés
 
 Ez a program egy egyszerű raktárkezelő rendszer, amely lehetővé teszi termékek nyilvántartását, értékük számítását és adatok JSON formátumban történő mentését.
 
-## 🎯 Teljesített követelmények
+## Teljesített követelmények
 
 **Grafikai modul**: customtkinter
 **Tanult modul**: json (3 függvénnyel bemutatva)
@@ -16,7 +16,7 @@ Ez a program egy egyszerű raktárkezelő rendszer, amely lehetővé teszi term�
 **Eseménykezelés**: gombok onClick eseményei
 **Soronkénti magyarázat**: teljes dokumentáció
 
-## 📁 Projekt struktúra
+## Projekt struktúra
 
 ```
 projekt/
@@ -32,7 +32,7 @@ projekt/
     └── inventory.json         # Mentett adatok
 ```
 
-## 🚀 Telepítés és futtatás
+## Telepítés és futtatás
 
 ### Követelmények
 ```bash
@@ -44,7 +44,7 @@ pip install customtkinter
 python main.py
 ```
 
-## 📚 Modulok bemutatása
+## Modulok bemutatása
 
 ### 1. Grafikai modul – customtkinter
 
@@ -74,7 +74,7 @@ A **json** modul Python objektumok és JSON formátum közötti átalakítást t
 **3 használt függvény:**
 
 #### 1. `json.dump()`
-Python listát vagy szótárt JSON fájlba ír:
+Python listát JSON fájlba ír:
 ```python
 json.dump(self.inventory, f, indent=2, ensure_ascii=False)
 ```
@@ -107,7 +107,7 @@ def calculateBDValue(qty):
 ```
 
 **Jellemzők:**
-- BD monogram a függvény nevében ✅
+- BD monogram a függvény nevében
 - Egyszerű logika
 - Raktárkészlet értékének számítása
 
@@ -131,7 +131,7 @@ class BDProductCard(ctk.CTkFrame):
 ```
 
 **Jellemzők:**
-- BD monogram az osztály nevében ✅
+- BD monogram az osztály nevében
 - CTkFrame leszármazott (öröklődés)
 - Dinamikusan generált GUI elemek
 - Termék adatok vizuális megjelenítése
@@ -255,19 +255,19 @@ def add_product(self):
     # Validáció: ha üres vagy nem szám, kilép
     
     qty = int(qty_text)
-    # Szöveg → egész szám konverzió
+    # Szöveg - egész szám konverzió
     
     value = calculateBDValue(qty)
     # SAJÁT FÜGGVÉNY HÍVÁSA: érték kiszámítása
     
     product = {"name": name, "qty": qty, "value": value}
-    # Szótár létrehozása termékadatokkal
+    # Objektum létrehozása termékadatokkal
     
     self.inventory.append(product)
     # Hozzáadás a lista végéhez
     
     card = BDProductCard(self.list_frame, name, qty, value)
-    # SAJÁT OSZTÁLY PÉLDÁNYOSÍTÁSA: GUI kártya létrehozása
+    # GUI kártya létrehozása
     
     card.pack(fill="x", padx=10, pady=5)
     # Kártya elhelyezése a keretben
@@ -294,7 +294,7 @@ def save_inventory(self):
         # - ensure_ascii=False: magyar karakterek támogatása
 ```
 
-## 🎨 Funkcionalitás
+## Funkcionalitás
 
 1. **Termék hozzáadása**: Név és darabszám megadása
 2. **Automatikus értékszámítás**: calculateBDValue() függvénnyel
@@ -302,12 +302,3 @@ def save_inventory(self):
 4. **Adatok mentése**: JSON formátumban a data/ mappába
 5. **Eseménykezelés**: Gombok onClick eseményei
 
-
-## 👨‍💻 Szerző
-
-**Monogram:** BD  
-**Projekt:** Mini Raktárkezelő Rendszer  
-**Nyelv:** Python 3.x  
-**Framework:** customtkinter
-
----
